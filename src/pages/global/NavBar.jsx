@@ -22,9 +22,9 @@ const NavBar = () => {
                     </Link>
                 </Box>
                 <Box className='flex justify-around items-center col-span-6'>
-                        <NavLink to={'/trendleaders/services'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                            <Typography variant='h6'>Services</Typography>
-                        </NavLink>
+                    <NavLink to={'/trendleaders/services'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
+                        <Typography variant='h6'>Services</Typography>
+                    </NavLink>
                     <NavLink to={'/trendleaders/portfolio'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
                         <Typography variant='h6'>Portfolio</Typography>
                     </NavLink>
@@ -35,7 +35,7 @@ const NavBar = () => {
                         <Typography variant='h6'>Contact Us</Typography>
                     </NavLink>
                 </Box>
-                <Box className='col-span-3 flex justify-end'>
+                <Box className='col-span-3 flex justify-end' gap={2}>
                     <IconButton>
                         <Person2OutlinedIcon />
                     </IconButton>
