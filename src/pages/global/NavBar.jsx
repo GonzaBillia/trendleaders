@@ -6,8 +6,6 @@ import { Link, NavLink } from 'react-router-dom'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import logoDark from '../../assets/logoDark.png'
-import logoLight from '../../assets/logoLight.png'
 
 const NavBar = () => {
     const theme = useTheme()
@@ -20,7 +18,7 @@ const NavBar = () => {
             <Box className='container mx-auto p-5 grid grid-cols-12 justify-between'>
                 <Box className='flex h-8 col-span-3'>
                     <Link to={'/trendleaders/'}>
-                        <img className='h-8' src={theme.palette.mode === 'dark' ? {logoDark} : {logoLight}} alt='logo' />
+                        <img className='h-8' src={theme.palette.mode === 'dark' ? 'trendleaders/src/assets/logo-white.png' : 'trendleaders/src/assets/logo-black.png'} alt='logo' />
                     </Link>
                 </Box>
                 <Box className='flex justify-around items-center col-span-6'>
