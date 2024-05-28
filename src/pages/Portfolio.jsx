@@ -1,9 +1,12 @@
 import React from 'react'
+import { Box } from '@mui/material'
 
 const Portfolio = () => {
-  return (
-    <div>Portfolio</div>
-  )
+    return (
+        <Box minHeight={'70vh'}>
+
+        </Box>
+    )
 }
 
 export default Portfolio

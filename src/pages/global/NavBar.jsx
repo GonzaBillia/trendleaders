@@ -14,7 +14,7 @@ const NavBar = () => {
 
     return (
 
-        <Box backgroundColor={colors.primary[400]}>
+        <Box backgroundColor={colors.primary[400]} className='top-0 z-50 drop-shadow-md'>
             <Box className='container mx-auto p-5 grid grid-cols-12 justify-between'>
                 <Box className='flex h-8 col-span-3'>
                     <Link to={'/trendleaders/'}>

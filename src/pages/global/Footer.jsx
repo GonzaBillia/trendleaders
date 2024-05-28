@@ -1,20 +1,20 @@
 import { Box, Typography, useTheme } from '@mui/material'
 import React from 'react'
-import { useContext } from 'react'
-import { ColorModeContext, tokens } from '../../theme'
-import { NavLink } from 'react-router-dom'
+import { tokens } from '../../theme'
+import { NavLink, Link } from 'react-router-dom'
 
 
 const Footer = () => {
     const theme = useTheme()
     const colors = tokens(theme.palette.mode)
-    const colorMode = useContext(ColorModeContext)
 
     return (
         <Box width='100%' backgroundColor={colors.primary[400]} borderTop={1} borderColor={colors.primary[100]} className='pt-14 pb-8'>
             <Box className='container mx-auto grid grid-cols-12'>
                 <Box className='col-span-6 p-5'>
-                    <img className='h-8' src={theme.palette.mode === 'dark' ? 'trendleaders/src/assets/logo-white.png' : 'trendleaders/src/assets/logo-black.png'} alt='logo' />
+                    <Link to={'/trendleaders/'}>
+                        <img className='h-8' src={theme.palette.mode === 'dark' ? 'trendleaders/src/assets/logo-white.png' : 'trendleaders/src/assets/logo-black.png'} alt='logo' />
+                    </Link>
                 </Box>
                 <Box className='col-span-5 col-start-8 flex justify-between items-center p-5'>
                     <NavLink to={'/trendleaders/services'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
