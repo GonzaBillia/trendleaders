@@ -13,7 +13,7 @@ const Footer = () => {
             <Box className='container mx-auto grid grid-cols-12'>
                 <Box className='col-span-6 p-5'>
                     <Link to={'/trendleaders/'}>
-                        <img className='h-8' src={theme.palette.mode === 'dark' ? 'trendleaders/src/assets/logo-white.png' : 'trendleaders/src/assets/logo-black.png'} alt='logo' />
+                        <img className='h-8' src={theme.palette.mode === 'dark' ? 'https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/logoDark2.svg?alt=media&token=6debfbbd-6493-4fac-9f3b-f6032c1c7649' : 'https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/logoLight2.svg?alt=media&token=1314b1fe-bb37-46eb-a35c-87b9f13877da'} alt='logo' />
                     </Link>
                 </Box>
                 <Box className='col-span-5 col-start-8 flex justify-between items-center p-5'>
