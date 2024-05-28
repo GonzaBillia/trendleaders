@@ -2,6 +2,7 @@ import { Box, useTheme } from '@mui/material'
 import React from 'react'
 import { tokens } from '../theme'
 import CarouselComponent from '../components/Carousel'
+import PlanCards from '../components/PlanCards'
 
 const Home = () => {
     const theme = useTheme()
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <Box minHeight={'70vh'}>
             <CarouselComponent />
+            <PlanCards />
         </Box>
     )
 }
