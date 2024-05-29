@@ -4,6 +4,8 @@ import { tokens } from '../theme'
 import CarouselComponent from '../components/Carousel'
 import PlanCards from '../components/PlanCards'
 import ProyectsList from '../components/ProyectsList'
+import Team from '../components/Team'
+import PricingOptions from '../components/PricingOptions'
 
 const Home = () => {
     const theme = useTheme()
@@ -14,6 +16,8 @@ const Home = () => {
             <CarouselComponent />
             <PlanCards />
             <ProyectsList />
+            <Team />
+            <PricingOptions />
         </Box>
     )
 }

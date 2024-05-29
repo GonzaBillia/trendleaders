@@ -43,16 +43,16 @@ const NavBar = () => {
                 </Box>
                 <Box className='flex justify-around items-center col-span-6'>
                     <NavLink to={'/trendleaders/services'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                        <Typography variant='h6'>Services</Typography>
+                        <Typography variant='h6' fontWeight={700}>Services</Typography>
                     </NavLink>
                     <NavLink to={'/trendleaders/portfolio'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                        <Typography variant='h6'>Portfolio</Typography>
+                        <Typography variant='h6' fontWeight={700}>Portfolio</Typography>
                     </NavLink>
                     <NavLink to={'/trendleaders/about'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                        <Typography variant='h6'>About Us</Typography>
+                        <Typography variant='h6' fontWeight={700}>About Us</Typography>
                     </NavLink>
                     <NavLink to={'/trendleaders/contact'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                        <Typography variant='h6'>Contact Us</Typography>
+                        <Typography variant='h6' fontWeight={700}>Contact Us</Typography>
                     </NavLink>
                 </Box>
                 <Box className='col-span-3 flex justify-end' gap={2}>
@@ -75,10 +75,10 @@ const NavBar = () => {
                 
                 <Box className='flex justify-around items-center col-span-2 col-start-4'>
                     <NavLink to={'/trendleaders/services'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                        <Typography variant='h6'>Services</Typography>
+                        <Typography variant='h6' fontWeight={700}>Services</Typography>
                     </NavLink>
                     <NavLink to={'/trendleaders/portfolio'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                        <Typography variant='h6'>Portfolio</Typography>
+                        <Typography variant='h6' fontWeight={700}>Portfolio</Typography>
                     </NavLink>
                 </Box>
                 <Box className='flex col-start-6 h-10 col-span-2 justify-center rounded-full'>
@@ -88,10 +88,10 @@ const NavBar = () => {
                 </Box>
                 <Box className='flex justify-around items-center col-span-2 col-start-8'>
                     <NavLink to={'/trendleaders/about'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                        <Typography variant='h6'>About Us</Typography>
+                        <Typography variant='h6' fontWeight={700}>About Us</Typography>
                     </NavLink>
                     <NavLink to={'/trendleaders/contact'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
-                        <Typography variant='h6'>Contact Us</Typography>
+                        <Typography variant='h6' fontWeight={700}>Contact Us</Typography>
                     </NavLink>
                 </Box>
                 <Box className='col-span-1 col-start-12 flex justify-end' gap={2}>
