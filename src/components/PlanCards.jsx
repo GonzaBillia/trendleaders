@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useTheme, Box, Typography, Button } from '@mui/material'
 import { tokens } from '../theme'
-import { Card, CardBody } from '@material-tailwind/react'
+import { Card, CardBody, CardFooter } from '@material-tailwind/react'
 import { db } from '../firebase/firebaseConfig'
 import {collection, getDocs} from 'firebase/firestore'
 import { Link } from 'react-router-dom'
@@ -39,7 +39,7 @@ const PlanCards = () => {
                     className='col-span-1 rounded-3xl p-10'
                     style={{backgroundColor: colors.background[100], borderWidth: 2, borderColor: colors.primary[400]}}
                 >
-                    <CardBody style={{backgroundColor: colors.background[100]}} className='text-center rounded-xl'>
+                    <CardBody style={{backgroundColor: colors.background[100], minHeight: 370}} className='text-center rounded-xl'>
                         <Box backgroundColor={colors.background[100]} className='flex justify-center'>
                             <img src={plan.img} alt={plan.title} className='w-40 rounded-full' />
                         </Box>
@@ -59,7 +59,13 @@ const PlanCards = () => {
                             {plan.description}
 
                         </Typography>
+                        
                     </CardBody>
+                    <CardFooter>
+                        <Box className='flex justify-center items-center'>
+                            <img src={theme.palette.mode === 'dark' ? plan.logoWhite : plan.logoBlack} alt={plan.title} className='h-12' />
+                        </Box>
+                    </CardFooter>
                 </Card>
             ))}
             <Box className='col-span-3 text-center pt-8'>
