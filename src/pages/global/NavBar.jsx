@@ -12,7 +12,7 @@ const NavBar = () => {
     //scrollToggle
     const [navScroll, setNavScroll] = useState(false)
     const setNav = () => {
-        if (window.scrollY >= 32) {
+        if (window.scrollY >= 48) {
             setNavScroll(true)
         } else {
             setNavScroll(false)
@@ -70,7 +70,7 @@ const NavBar = () => {
             </Box>
         </Box>
         :
-        <Box backgroundColor={colors.primary[400]} className='sticky top-0 z-50 drop-shadow-md'>
+        <Box backgroundColor={colors.primary[400]} className='fixed w-full top-0 z-50 drop-shadow-md'>
             <Box className='container mx-auto p-2 grid grid-cols-12 justify-between'>
                 
                 <Box className='flex justify-around items-center col-span-2 col-start-4'>

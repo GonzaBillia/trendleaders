@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { useTheme, Box, Typography } from '@mui/material'
+import { useTheme, Box, Typography, Button } from '@mui/material'
 import { tokens } from '../theme'
-import { Card, CardBody, Button } from '@material-tailwind/react'
+import { Card, CardBody } from '@material-tailwind/react'
 import { db } from '../firebase/firebaseConfig'
 import {collection, getDocs} from 'firebase/firestore'
 import { Link } from 'react-router-dom'
@@ -28,18 +28,19 @@ const PlanCards = () => {
 
     return (
         <Box className='w-full mx-auto container my-32 grid grid-cols-3 gap-4'>
-            <Box className='col-span-3 text-center pb-12'>
-                <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8'>Our Lead Plans</Typography>
+            <Box className='col-span-3 text-center pb-8'>
+                <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8'>Our Leads Plan</Typography>
+                <Typography variant='h4' color={colors.grey[100]}>These are the three steps of Success!</Typography>
             </Box>
             {plansData.map((plan) => (
                 <Card
                     key={plan.id}
                     shadow={false}
-                    className='col-span-1 rounded-xl p-10'
-                    style={{backgroundColor: colors.primary[400]}}
+                    className='col-span-1 rounded-3xl p-10'
+                    style={{backgroundColor: colors.background[100], borderWidth: 2, borderColor: colors.primary[400]}}
                 >
-                    <CardBody style={{backgroundColor: colors.primary[400]}} className='text-center rounded-xl'>
-                        <Box backgroundColor={colors.primary[400]} className='flex justify-center'>
+                    <CardBody style={{backgroundColor: colors.background[100]}} className='text-center rounded-xl'>
+                        <Box backgroundColor={colors.background[100]} className='flex justify-center'>
                             <img src={plan.img} alt={plan.title} className='w-40 rounded-full' />
                         </Box>
                         <Typography
@@ -62,10 +63,13 @@ const PlanCards = () => {
                 </Card>
             ))}
             <Box className='col-span-3 text-center pt-8'>
-                <Button variant='contained' color='deep-orange' className='w-48 h-16 mx-auto'>
+                <Typography variant='h5' fontWeight={700} color={colors.grey[100]} className='pb-8'>
+                    See all the details about our Services
+                </Typography>
+                <Button variant='contained' sx={[{backgroundColor: colors.orangeAccent[500]}, {'&:hover': {backgroundColor: colors.orangeAccent[600]}}]} className='w-48 h-16 mx-auto'>
                     <Link to='/trendleaders/services'>
                         <Typography variant='h5' fontWeight={700} color={colors.grey[100]} className=''>
-                            Go to Services
+                            Lets Go!
                         </Typography>
                     </Link>
                 </Button>
