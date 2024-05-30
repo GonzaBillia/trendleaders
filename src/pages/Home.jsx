@@ -6,6 +6,8 @@ import PlanCards from '../components/PlanCards'
 import ProyectsList from '../components/ProyectsList'
 import Team from '../components/Team'
 import PricingOptions from '../components/PricingOptions'
+import BrandsCarousel from '../components/BrandsCarousel'
+import TestimonialsCarousel from '../components/TestimonialsCarousel'
 
 const Home = () => {
     const theme = useTheme()
@@ -16,7 +18,9 @@ const Home = () => {
             <CarouselComponent />
             <PlanCards />
             <ProyectsList />
+            <BrandsCarousel />
             <Team />
+            <TestimonialsCarousel />
             <PricingOptions />
         </Box>
     )

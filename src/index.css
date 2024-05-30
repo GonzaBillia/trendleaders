@@ -3,6 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@-webkit-keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 8));
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 8));
+    }
+}
 
 
 html,
@@ -19,10 +36,6 @@ body,
     position: relative;
 }
 
-.content .banner-h {
-    height: 750px;
-}
-
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -37,4 +50,18 @@ body,
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
+}
+
+
+/*Banner*/
+.content .banner-h {
+    height: 750px;
+}
+
+
+/*slider infinito*/
+.slide-track{
+    width: calc(300px * 16);
+    animation: scroll 30s linear infinite;
+    -webkit-animation: scroll 30s linear infinite;
 }

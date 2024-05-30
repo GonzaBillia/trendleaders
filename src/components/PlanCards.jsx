@@ -28,8 +28,8 @@ const PlanCards = () => {
 
     return (
         <Box className='w-full mx-auto container my-32 grid grid-cols-3 gap-4'>
-            <Box className='col-span-3 text-center pb-8'>
-                <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8'>Our Leads Plan</Typography>
+            <Box className='col-span-3 text-center pb-16'>
+                <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Our Leads Plan</Typography>
                 <Typography variant='h4' color={colors.grey[100]}>These are the three steps of Success!</Typography>
             </Box>
             {plansData.map((plan) => (

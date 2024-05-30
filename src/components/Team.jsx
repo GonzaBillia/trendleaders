@@ -24,7 +24,7 @@ const Team = () => {
 
 
     return (
-        <Box className='w-full py-32'>
+        <Box className='w-full py-32' backgroundColor={colors.primary[400]}>
             <Box className='container mx-auto grid grid-cols-2'>
                 <Box className='col-span-1 pr-16'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8'>Meet the Leadership</Typography>
