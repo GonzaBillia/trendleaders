@@ -25,7 +25,6 @@ const ProyectsList = () => {
 
     useEffect(() => {
         getProyectsData()
-        console.log(proyectsData)
     }, [])
 
     //Cards Configs

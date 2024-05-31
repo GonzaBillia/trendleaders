@@ -6,6 +6,8 @@ import { Link, NavLink } from 'react-router-dom'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 
 const NavBar = () => {
 
@@ -55,7 +57,13 @@ const NavBar = () => {
                         <Typography variant='h6' fontWeight={700}>Contact Us</Typography>
                     </NavLink>
                 </Box>
-                <Box className='col-span-3 flex justify-end' gap={2}>
+                <Box className='col-span-3 flex justify-end' gap={1}>
+                    <IconButton>
+                        <HelpOutlineOutlinedIcon />
+                    </IconButton>
+                    <IconButton>
+                        <SupportAgentOutlinedIcon />
+                    </IconButton>
                     <IconButton>
                         <Person2OutlinedIcon />
                     </IconButton>
@@ -72,7 +80,14 @@ const NavBar = () => {
         :
         <Box backgroundColor={colors.primary[400]} className='fixed w-full top-0 z-50 drop-shadow-md'>
             <Box className='container mx-auto p-2 grid grid-cols-12 justify-between'>
-                
+                <Box className='flex h-10 col-span-2 col-start-1' gap={2}>
+                    <IconButton>
+                        <HelpOutlineOutlinedIcon />
+                    </IconButton>
+                    <IconButton>
+                        <SupportAgentOutlinedIcon />
+                    </IconButton>
+                </Box>
                 <Box className='flex justify-around items-center col-span-2 col-start-4'>
                     <NavLink to={'/trendleaders/services'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
                         <Typography variant='h6' fontWeight={700}>Services</Typography>

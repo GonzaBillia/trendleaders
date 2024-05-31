@@ -76,9 +76,17 @@ const TestimonialsCarousel = () => {
                                     variant='h4'
                                     fontWeight={700}
                                     color={colors.grey[100]}
-                                    className='pb-2'
+                                    className='pb-1'
                                 >
                                     {testimonials.name}
+                                </Typography>
+                                <Typography
+                                    variant='h5'
+                                    fontWeight={500}
+                                    color={colors.blueAccent[400]}
+                                    className='pb-2'
+                                >
+                                    {testimonials.title}
                                 </Typography>
                                 <Rating value={5} readonly />
                             </Box>

@@ -30,9 +30,10 @@ const Footer = () => {
                         <Typography variant='h6'>Contact Us</Typography>
                     </NavLink>
                 </Box>
-                <Box className='col-span-12 flex justify-between p-5' borderTop={1} borderColor={colors.primary[100]}>
-                    <Typography variant='h6'>Made By Gonzalo Billia. Follow my Social Media for more.</Typography>
-                    <Box display={"flex"} gap={2}>
+                <Box className='col-span-12 grid grid-cols-3 p-4' borderTop={1} borderColor={colors.primary[100]}>
+                    <Typography variant='h6' className='col-span-1 col-start-1 flex justify-start'>TrendLeaders LLC © 2024</Typography>
+                    <Typography variant='h6' className='col-span-1 col-start-2 flex justify-center'>Made By Gonzalo Billia. Follow my Social Media for more!</Typography>
+                    <Box display={"flex"} gap={2} className='col-span-1 col-start-3 flex justify-end'>
                         <Typography as="a" href="https://www.linkedin.com/in/gonzalo-billia/" target='_blank' className="opacity-80 transition-opacity hover:opacity-100">
                             <span className="[&>svg]:h-5 [&>svg]:w-5">
                                 <svg

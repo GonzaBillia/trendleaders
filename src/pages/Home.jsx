@@ -8,6 +8,7 @@ import Team from '../components/Team'
 import PricingOptions from '../components/PricingOptions'
 import BrandsCarousel from '../components/BrandsCarousel'
 import TestimonialsCarousel from '../components/TestimonialsCarousel'
+import ContactQuestions from '../components/ContactQuestions'
 
 const Home = () => {
     const theme = useTheme()
@@ -22,6 +23,7 @@ const Home = () => {
             <Team />
             <TestimonialsCarousel />
             <PricingOptions />
+            <ContactQuestions />
         </Box>
     )
 }
