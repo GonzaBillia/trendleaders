@@ -15,7 +15,8 @@ const CarouselComponent = () => {
     const getBanners = async () => {
         const q = query(bannersCollection, where("active", "==", true));
         const data = await getDocs(q);
-        setBanners(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        const gotBanners = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        setBanners(gotBanners.sort((a, b) => a.position - b.position));
     };
 
     //useEffect
@@ -26,12 +27,14 @@ const CarouselComponent = () => {
     return (
         <Carousel
             className="rounded-b-xl"
+            loop={true}
+            autoplay={true}
             navigation={({ setActiveIndex, activeIndex, length }) => (
                 <div className="absolute bottom-4 left-2/4 z-40 flex -translate-x-2/4 gap-2">
                     {new Array(length).fill("").map((_, i) => (
                         <span
                             key={i}
-                            className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                            className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-orange-700" : "w-4 bg-orange-700/50"
                                 }`}
                             onClick={() => setActiveIndex(i)}
                         />
@@ -44,7 +47,7 @@ const CarouselComponent = () => {
                     key={banner.id}
                     src={banner.img}
                     alt={banner.alt}
-                    className="w-full rounded-b-xl object-cover banner-h"
+                    className="w-full rounded-b-xl object-cover h-[750px]"
                 />
             ))}
         </Carousel>

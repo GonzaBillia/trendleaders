@@ -53,12 +53,6 @@ body,
 }
 
 
-/*Banner*/
-.content .banner-h {
-    height: 750px;
-}
-
-
 /*slider infinito*/
 .slide-track{
     width: calc(300px * 16);
