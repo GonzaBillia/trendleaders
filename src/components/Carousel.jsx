@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Carousel } from "@material-tailwind/react";
+import { Carousel, Spinner } from "@material-tailwind/react";
 import { db } from "../firebase/firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
@@ -25,7 +25,19 @@ const CarouselComponent = () => {
     }, []);
 
     return (
-        <Carousel
+        <>
+            {banners.length === 0 ?
+            
+            <div className="w-full h-[750px] flex justify-center items-center">
+                <Spinner
+                    className="h-16 w-16"
+                    color="orange"
+                />
+            </div>
+
+            :
+
+            <Carousel
             className="rounded-b-xl"
             loop={true}
             autoplay={true}
@@ -51,6 +63,9 @@ const CarouselComponent = () => {
                 />
             ))}
         </Carousel>
+        }
+        </>
+        
     );
 };
 
