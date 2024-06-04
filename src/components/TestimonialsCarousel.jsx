@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { tokens } from '../theme'
-import { useTheme, Box, Typography, Card } from '@mui/material'
+import { useTheme, Box, Typography, Card, Hidden } from '@mui/material'
 import { Carousel, Rating } from '@material-tailwind/react'
 import { db } from '../firebase/firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore'
@@ -46,6 +46,8 @@ const TestimonialsCarousel = () => {
                     className="rounded-xl bg-transparent h-[510px]"
                     autoplay={true}
                     loop={true}
+                    prevArrow={Hidden}
+                    nextArrow={Hidden}
                     navigation={({ setActiveIndex, activeIndex, length }) => (
                         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
                             {new Array(length).fill("").map((_, i) => (

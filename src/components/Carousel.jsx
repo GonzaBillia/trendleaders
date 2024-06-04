@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, Spinner } from "@material-tailwind/react";
+import { Hidden } from "@mui/material";
 import { db } from "../firebase/firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
@@ -41,6 +42,8 @@ const CarouselComponent = () => {
             className="rounded-b-xl"
             loop={true}
             autoplay={true}
+            prevArrow={Hidden} 
+            nextArrow={Hidden}
             navigation={({ setActiveIndex, activeIndex, length }) => (
                 <div className="absolute bottom-4 left-2/4 z-40 flex -translate-x-2/4 gap-2">
                     {new Array(length).fill("").map((_, i) => (
