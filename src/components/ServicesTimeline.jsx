@@ -20,7 +20,7 @@ const ServicesTimeline = () => {
 
 
     return (
-        <Box className='w-full' backgroundColor={colors.primary[400]}>
+        <Box className='w-full' backgroundColor={colors.background[100]}>
             <Box className='container mx-auto py-32'>
                 <Box className='flex flex-col justify-center items-center'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Our Services</Typography>
@@ -47,7 +47,6 @@ const ServicesTimeline = () => {
                                     <Link to='/trendleaders/contact'>
                                         <Button variant='contained' sx={[{ backgroundColor: colors.orangeAccent[500] }, { '&:hover': { backgroundColor: colors.orangeAccent[600] } }]}>Go to Contact</Button>
                                     </Link>
-                                    <Button variant='contained' sx={[{ backgroundColor: colors.orangeAccent[500] }, { '&:hover': { backgroundColor: colors.orangeAccent[600] } }]}>Go to Plans</Button>
                                 </Box>
                             </TimelineBody>
                         </TimelineItem>

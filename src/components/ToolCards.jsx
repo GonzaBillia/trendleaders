@@ -44,7 +44,7 @@ const ToolCards = () => {
 
 
     return (
-        <Box className='w-full'>
+        <Box backgroundColor={colors.primary[400]} className='w-full'>
 
             <Box className="py-32 container mx-auto">
                 <Box className='flex flex-col items-center justify-center pb-16'>
@@ -53,7 +53,7 @@ const ToolCards = () => {
                 </Box>
                 <Box>
                     <Box className='grid grid-cols-3 my-2 '>
-                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.primary[400]}>
+                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
                             <Box className='flex justify-center pt-8'>
                                 <Typography variant='h2' fontWeight={500} color={colors.grey[100]}>Product Designing</Typography>
                             </Box>
@@ -80,7 +80,7 @@ const ToolCards = () => {
                         <Box className='col-span-1 h-[400px]'>
                             <img src={shopifyBg} alt="Shopify" className='h-full w-full object-cover' />
                         </Box>
-                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.primary[400]}>
+                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
                             <Box className='flex justify-center pt-8'>
                                 <Typography variant='h2' fontWeight={500} color={colors.grey[100]}>Store Providing</Typography>
                             </Box>
@@ -101,7 +101,7 @@ const ToolCards = () => {
                         </Box>
                     </Box>
                     <Box className='grid grid-cols-3 my-2 '>
-                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.primary[400]}>
+                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
                             <Box className='flex justify-center pt-8'>
                                 <Typography variant='h2' fontWeight={500} color={colors.grey[100]}>Sales Controlling</Typography>
                             </Box>
