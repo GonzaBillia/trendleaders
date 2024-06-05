@@ -19,13 +19,14 @@ const ToolsDemoPanels = () => {
     const colors = tokens(theme.palette.mode);
 
     //Docs
-    const [printful, setPrintful] = useState({})
-    const [shopify, setShopify] = useState({})
-    const [stripe, setStripe] = useState({})
-
-    const [brands, setBrands] = useState({})
-    const [activeBrand, setActiveBrand] = useState({})
+    //const [data, setData] = useState([])
     const [activeTab, setActiveTab] = useState("printful");
+
+    //Content
+    const [printfulProducts, setPrintfulProducts] = useState([])
+    const [shopifyServices, setShopifyServices] = useState([])
+    const [brands, setBrands] = useState({})
+
 
     //brands imgs
     const [printfulBrands, setPrintfulBrands] = useState([])
@@ -37,38 +38,33 @@ const ToolsDemoPanels = () => {
     }
 
     const getProductsImg = async () => {
-        const data = await getDocs(collection(db, "printfulProducts"))
-        setProductsImg(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+            const data = await getDocs(collection(db, "printfulProducts"))
+            setPrintfulProducts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     }
 
-
-    const getPrintful = async () => {
-        const docRef = doc(db, "plansData", "XGiDnnSRTLg4IFtSkbSV")
-        const docSnap = await getDoc(docRef)
-        setPrintful(docSnap.data())
+    const getServicesImg = async () => {
+        const data = await getDocs(collection(db, "shopifyServices"))
+        setShopifyServices(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     }
 
-    const getShopify = async () => {
-        const docRef = doc(db, "plansData", "JctIylLQhrdzw0zv6dtW")
-        const docSnap = await getDoc(docRef)
-        setShopify(docSnap.data())
+    const handleChange = (value) => {
+        setActiveTab(value)
+        if(value === "printful"){
+            setProductsImg(printfulProducts)
+        }else if(value === "shopify"){
+            setProductsImg(shopifyServices)
+        }
+        console.log(productsImg)
     }
-
-    const getStripe = async () => {
-        const docRef = doc(db, "plansData", "oEl82sJeFQGNvvLKOKBB")
-        const docSnap = await getDoc(docRef)
-        setStripe(docSnap.data())
-    }
-
 
 
     useEffect(() => {
-        getPrintful()
-        getShopify()
-        getStripe()
         getBrands()
         getProductsImg()
+        getServicesImg()
+        handleChange("printful")
     }, [])
+
 
     const data = [
         {
@@ -98,16 +94,45 @@ const ToolsDemoPanels = () => {
         {
             label: "SHOPIFY",
             value: "shopify",
+
+            mainBrand: "https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/brands%2Fshopify_logo_darkbg.svg?alt=media&token=46030485-cfe9-4870-8faa-a4d9c5157cc2",
+            mainBrandLight: "https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/brands%2Fshopify_logo_whitebg.svg?alt=media&token=6ab98dbd-6eb6-43c2-a066-c59d9f84af05",
+            map: "https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/store-content%2FANH.jpg?alt=media&token=8233b79c-85a1-41ca-9003-359bc5130dde",
+            cover: 'https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/store-content%2FHYTWILUVTFOT7GXGPTDVATGAAU.avif?alt=media&token=3ab844eb-4630-40a9-b905-48b903a5b79c',
+
             //row 1
-            titleT1: "Shopify Stuff",
+            titleT1: "Special Stores for Special People!",
             descT1: "Custom Merchandising for your Fans and Followers to make your content more personal and unique.",
+
+            titleT2: "What We Do?",
+            descT2: "We set up your Online Store. We choose the best style template that fit with you and your Personal Brand. We will create complete collections and we provide you with Marketing Strategies, analythics, E-mail Marketing and Customer Support.",
+
+            //row 2
+            titleT3: "Some Available Brands",
+            brandImgs: printfulBrands,
+            descT3: "",
+
+            //row 3
+            titleT4: "Practical, Custom and Mobile Friendly!",
         },
         {
             label: "STRIPE",
             value: "stripe",
-            desc: `We're not always in the position that we want to be at.
-    We're constantly growing. We're constantly making mistakes. We're
-    constantly trying to express ourselves and actualize our dreams.`,
+            
+            //row 1
+            titleT1: "Make Unique Designs for your Fans!",
+            descT1: "Custom Merchandising for your Fans and Followers to make your content more personal and unique.",
+
+            titleT2: "How we Work?",
+            descT2: "We create your products through Print on Demand, a practical and optimized system, that allows you to have great quality designs with a lot of types of compatible clothing materials.",
+
+            //row 2
+            titleT3: "Some Available Brands",
+            brandImgs: printfulBrands,
+            descT3: "",
+
+            //row 3
+            titleT4: "The Fastest Shipping to all Countries!",
         },
 
     ]
@@ -137,7 +162,7 @@ const ToolsDemoPanels = () => {
                             <Tab
                                 key={value}
                                 value={value}
-                                onClick={() => setActiveTab(value)}
+                                onClick={() => handleChange(value)}
                                 className='flex flex-col justify-center items-center h-12'
                             >
                                 <Typography variant="h4"
@@ -148,7 +173,7 @@ const ToolsDemoPanels = () => {
                     </TabsHeader>
                     <TabsBody className='h-[1000px]' style={{ backgroundColor: colors.background[100] }}>
                         {data.map(({ value, titleT1, titleT2, descT2, titleT3, mainBrand, mainBrandLight, map, titleT4, cover }) => (
-                            <TabPanel key={value} value={value} className='grid grid-cols-12 p-6 grid-rows-12 gap-4 w-full h-full'>
+                            <TabPanel key={value} value={value} className='grid grid-cols-12 p-4 grid-rows-12 gap-4 w-full h-full'>
                                 {/* ROW 1 */}
                                 <Box backgroundColor={colors.primary[400]} className='col-start-1 col-span-6 row-start-1 row-span-4 rounded-xl'>
                                     <Box className='w-full h-full relative'>
@@ -179,8 +204,8 @@ const ToolsDemoPanels = () => {
                                         </Box>
                                         <Carousel navigation={Hidden} prevArrow={Hidden} nextArrow={Hidden} className='rounded-xl' loop={true} autoplay={true}>
                                             {printfulBrands.map((brand) => (
-                                                <Box className='w-full h-full bg-white'>
-                                                    <img key={brand.id} src={brand.img} alt={brand.alt} className='p-16 w-full h-full object-contain rounded-xl' />
+                                                <Box key={brand.id} className='w-full h-full bg-white'>
+                                                    <img src={brand.img} alt={brand.alt} className='p-16 w-full h-full object-contain rounded-xl' />
                                                 </Box>
 
                                             ))}
@@ -195,7 +220,7 @@ const ToolsDemoPanels = () => {
                                     <Box className='w-full h-full'>
                                         <Carousel navigation={Hidden} prevArrow={Hidden} nextArrow={Hidden} className='w-full h-full rounded-xl' loop={true} autoplayDelay={4000} autoplay={true}>
                                             {productsImg.map((brand) => (
-                                                <Box className='w-full h-full'>
+                                                <Box key={brand.id} className='w-full h-full'>
                                                     <Box className='w-full h-[90%]'>
                                                         <img key={brand.id} src={brand.img} alt={brand.alt} className='h-full w-full object-cover' />
                                                     </Box>
