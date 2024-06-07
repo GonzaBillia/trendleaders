@@ -6,6 +6,7 @@ import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Link } from 'react-router-dom';
 
 
 const ContactQuestions = () => {
@@ -32,7 +33,9 @@ const ContactQuestions = () => {
                             <Typography variant='h5' color={colors.grey[100]}>You can read the frequently asked questions in the FAQ section</Typography>
                         </AccordionDetails>
                         <AccordionActions>
+                            <Link to={'/trendleaders/faq'}>
                             <Button variant='contained' sx={[{backgroundColor: colors.orangeAccent[500]}, {'&:hover': {backgroundColor: colors.orangeAccent[600]}}]}>FAQ Section</Button>
+                            </Link>
                         </AccordionActions>
                     </Accordion>
                     <Accordion defaultExpanded sx={{ backgroundColor: colors.primary[400] }} className='p-4 my-2'>
@@ -47,7 +50,9 @@ const ContactQuestions = () => {
                             <Typography variant='h5' color={colors.grey[100]}>Contact us going to our "Contact Us" Section or click the next Contact button</Typography>
                         </AccordionDetails>
                         <AccordionActions>
+                            <Link to={'/trendleaders/contact'}>
                             <Button variant='contained' sx={[{backgroundColor: colors.orangeAccent[500]}, {'&:hover': {backgroundColor: colors.orangeAccent[600]}}]}>Contact Center</Button>
+                            </Link>
                         </AccordionActions>
                     </Accordion>
                 </Box>
@@ -64,7 +69,9 @@ const ContactQuestions = () => {
                             <Typography variant='h5' color={colors.grey[100]}>You can Register Clicking the "User" Button below to start the Journey!</Typography>
                         </AccordionDetails>
                         <AccordionActions>
+                            <Link to={'/trendleaders/login'}>
                             <Button variant='contained' sx={[{backgroundColor: colors.orangeAccent[500]}, {'&:hover': {backgroundColor: colors.orangeAccent[600]}}]}>Register or Login</Button>
+                            </Link>
                         </AccordionActions>
                     </Accordion>
                     <Accordion sx={{ backgroundColor: colors.primary[400] }} className='p-4 my-2'>

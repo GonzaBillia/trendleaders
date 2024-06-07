@@ -11,6 +11,8 @@ import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 
 const NavBar = () => {
 
+    
+
     //scrollToggle
     const [navScroll, setNavScroll] = useState(false)
     const setNav = () => {
@@ -131,6 +133,7 @@ const NavBar = () => {
                 </Box>
             </Box>
         </Box>}
+
         </>
     )
 }
