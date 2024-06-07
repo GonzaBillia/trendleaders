@@ -4,7 +4,7 @@ import { tokens } from '../theme'
 import { db } from '../firebase/firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore'
 
-const BrandsCarousel = () => {
+const BrandsCarousel = ({section}) => {
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -23,7 +23,7 @@ const BrandsCarousel = () => {
     }, [])
 
     return (
-        <Box className='w-full py-16' backgroundColor={colors.background[100]}>
+        <Box className='w-full py-16' backgroundColor={section === true ? colors.primary[400] : colors.background[100]}>
             <Box className='container mx-auto w-full overflow-hidden'>
                 <Box className='text-center pb-16'>
                     <Typography

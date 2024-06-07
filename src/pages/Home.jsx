@@ -18,7 +18,7 @@ const Home = () => {
         <Box>
             <CarouselComponent />
             <PlanCards />
-            <ProyectsList />
+            <ProyectsList section={false} />
             <BrandsCarousel />
             <Team />
             <TestimonialsCarousel />

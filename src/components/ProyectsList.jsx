@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { tokens } from '../theme'
-import { useTheme, Typography, CardActionArea, Box, ButtonBase } from '@mui/material'
+import { useTheme, Typography, CardActionArea, Box, ButtonBase, Hidden } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { Link } from 'react-router-dom'
 import { db } from '../firebase/firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore'
+import { Carousel } from '@material-tailwind/react'
 
-const ProyectsList = () => {
+const ProyectsList = ({ section }) => {
 
     const theme = useTheme()
     const colors = tokens(theme.palette.mode)
@@ -95,53 +96,84 @@ const ProyectsList = () => {
     }));
 
 
+    //Section Config
+    const isSection = (section) => {
+        if (section === true) {
+            return (
+                proyectsData.map((proyect) => (
+                    <Box key={proyect.id} backgroundColor={colors.primary[400]} borderColor={colors.orangeAccent[500]} className='grid grid-cols-2 w-full my-16 border-4 rounded-xl'>
+                        <Box backgroundColor={colors.primary[400]} className='col-span-1 flex justify-center items-center px-12 rounded-l-lg'>
+                            <img src={proyect.logo} alt={proyect.alt} className='w-full h-[400px] object-contain' />
+                        </Box>
+                        <Box className='col-span-1 flex justify-center items-center rounded-r-xl'>
+                            <Carousel prevArrow={Hidden} nextArrow={Hidden} navigation={Hidden} autoplay={true} loop={true} className='w-full h-[500px] rounded-r-lg'>
+                                {proyect.images.map((image) => (
+                                    <img key={[image]} src={image} alt={proyect.alt} className='w-full h-[500px] object-cover' />
+                                ))}
+                            </Carousel>
+                        </Box>
+                    </Box>
+                )))
+        } else {
+            return (
+                <Box className='grid grid-cols-3'>
+                    {proyectsData.map((proyect) => (
+                        <Box
+                            key={proyect.id}
+                            className='col-span-1 px-2'
+                            sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%', backgroundColor: colors.background[100] }}
+                        >
+                            <CardActionArea
+                                component={Link}
+                                to={`/trendleaders/portfolio`}
+                            >
+                                <ImageButton
+                                    focusRipple
+                                    key={proyect.id}
+                                    style={{
+                                        width: '100%',
+                                    }}
+                                >
+                                    <ImageSrc style={{ backgroundImage: `url(${proyect.images[0]})` }} />
+                                    <ImageBackdrop className="MuiImageBackdrop-root" />
+                                    <Image>
+                                        <Typography
+                                            component="span"
+                                            variant="h4"
+                                            fontWeight={700}
+                                            color="inherit"
+                                            sx={{
+                                                position: 'relative',
+                                                p: 4,
+                                                pt: 2,
+                                                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`
+                                            }}
+                                        >
+                                            {proyect.name}
+                                            <ImageMarked className="MuiImageMarked-root" />
+                                        </Typography>
+                                    </Image>
+                                </ImageButton>
+                            </CardActionArea>
+                        </Box>
+                    ))}
+                </Box>
+
+            )
+        }
+    }
+
+
     return (
-        <Box backgroundColor={colors.primary[400]} className='pt-32 pb-48'>
+        <Box backgroundColor={isSection === false ? colors.primary[400] : colors.background[100]} className='py-32'>
             <Box className='w-full mx-auto container grid grid-cols-3 gap-3'>
                 <Box className='col-span-3 text-center pb-16'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Our Projects</Typography>
                     <Typography variant='h4' color={colors.grey[100]}>Take a look our Special Proyects made with Love</Typography>
                 </Box>
-                {proyectsData.map((proyect) => (
-                    <Box
-                        key={proyect.id}
-                        className='col-span-1'
-                        sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%', backgroundColor: colors.background[100] }}
-                    >
-                        <CardActionArea
-                            component={Link}
-                            to={`/portfolio`}
-                        >
-                            <ImageButton
-                                focusRipple
-                                key={proyect.id}
-                                style={{
-                                    width: '100%',
-                                }}
-                            >
-                                <ImageSrc style={{ backgroundImage: `url(${proyect.images[0]})` }} />
-                                <ImageBackdrop className="MuiImageBackdrop-root" />
-                                <Image>
-                                    <Typography
-                                        component="span"
-                                        variant="h4"
-                                        fontWeight={700}
-                                        color="inherit"
-                                        sx={{
-                                            position: 'relative',
-                                            p: 4,
-                                            pt: 2,
-                                            pb: (theme) => `calc(${theme.spacing(1)} + 6px)`
-                                        }}
-                                    >
-                                        {proyect.name}
-                                        <ImageMarked className="MuiImageMarked-root" />
-                                    </Typography>
-                                </Image>
-                            </ImageButton>
-                        </CardActionArea>
-                    </Box>
-                ))}
+                <Box className='col-span-3'>
+                    {isSection(section)}
+                </Box>
             </Box>
         </Box>
 

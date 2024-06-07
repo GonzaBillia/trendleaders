@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { db } from '../firebase/firebaseConfig'
-import {doc, getDoc } from 'firebase/firestore'
+import {collection, getDocs, where, query } from 'firebase/firestore'
 import { Box, Typography, useTheme } from '@mui/material'
 import { tokens } from '../theme'
 import { Spinner } from '@material-tailwind/react'
 
-const ServicesHeader = () => {
+const BannerHeader = ({section}) => {
 
     const theme = useTheme()
     const colors = tokens(theme.palette.mode)
 
-    const [header, setHeader] = useState(null)
+    const [header, setHeader] = useState(undefined)
 
     const getHeader = async () => {
-        const docRef = doc(db, "banners", "vLI7GZCgwWzh15rirgiJ")
-        const docSnap = await getDoc(docRef)
-        setHeader(docSnap.data())
+        const q = query(collection(db, 'banners'), where('title', '==', section))
+        const data = await getDocs(q)
+        const gotHeader = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        setHeader(gotHeader[0])
     }
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const ServicesHeader = () => {
 
     return (
         <>
-            {header === null ?
+            {header === undefined ?
             <div className="w-full h-[750px] flex justify-center items-center">
                 <Spinner
                     className="h-16 w-16"
@@ -44,4 +45,4 @@ const ServicesHeader = () => {
     )
 }
 
-export default ServicesHeader
+export default BannerHeader
