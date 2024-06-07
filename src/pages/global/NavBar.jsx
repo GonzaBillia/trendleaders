@@ -59,7 +59,9 @@ const NavBar = () => {
                 </Box>
                 <Box className='col-span-3 flex justify-end' gap={1}>
                     <IconButton>
-                        <HelpOutlineOutlinedIcon />
+                        <Link to={'/trendleaders/faq'}>
+                            <HelpOutlineOutlinedIcon />
+                        </Link>
                     </IconButton>
                     <IconButton>
                         <SupportAgentOutlinedIcon />
@@ -82,7 +84,9 @@ const NavBar = () => {
             <Box className='container mx-auto p-2 grid grid-cols-12 justify-between'>
                 <Box className='flex h-10 col-span-2 col-start-1' gap={2}>
                     <IconButton>
-                        <HelpOutlineOutlinedIcon />
+                        <Link to={'/trendleaders/faq'}>
+                            <HelpOutlineOutlinedIcon />
+                        </Link>
                     </IconButton>
                     <IconButton>
                         <SupportAgentOutlinedIcon />

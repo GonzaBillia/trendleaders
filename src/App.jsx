@@ -11,6 +11,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Error from './pages/Error'
 import ScrollToTop from './components/ScrollToTop'
+import FAQ from './pages/FAQ'
 
 function App() {
   const [theme, colorMode] = useMode()
@@ -30,6 +31,7 @@ function App() {
                     <Route path="/trendleaders/portfolio" element={<Portfolio />} />
                     <Route path="/trendleaders/about" element={<About />} />
                     <Route path="/trendleaders/contact" element={<Contact />} />
+                    <Route path='/trendleaders/faq' element={<FAQ />} />
                     <Route path="/trendleaders/*" element={<Error />} />
                   </Routes>
                   <Footer />
