@@ -37,8 +37,8 @@ const NavBar = () => {
         <>
         {navScroll === false ?
         <Box backgroundColor={colors.primary[400]} className='top-0 z-50 drop-shadow-md'>
-            <Box className='container mx-auto p-5 grid grid-cols-12 justify-between'>
-                <Box className='flex h-8 col-span-3'>
+            <Box className='container mx-auto p-5 grid grid-cols-12 justify-between items-center'>
+                <Box className='flex items-center h-8 col-span-3'>
                     <Link to={'/trendleaders/'}>
                         <img className='h-8' src={theme.palette.mode === 'dark' ? logoDarkUrl : logoLightUrl} alt='logo' />
                     </Link>
@@ -67,7 +67,9 @@ const NavBar = () => {
                         <SupportAgentOutlinedIcon />
                     </IconButton>
                     <IconButton>
-                        <Person2OutlinedIcon />
+                        <Link to={'/trendleaders/login'}>
+                            <Person2OutlinedIcon />
+                        </Link>
                     </IconButton>
                     <IconButton onClick={colorMode.toggleColorMode}>
                         {theme.palette.mode === 'dark' ? (
@@ -100,7 +102,7 @@ const NavBar = () => {
                         <Typography variant='h6' fontWeight={700}>Portfolio</Typography>
                     </NavLink>
                 </Box>
-                <Box className='flex col-start-6 h-10 col-span-2 justify-center rounded-full'>
+                <Box className='flex col-start-6 h-12 col-span-2 justify-center items-center rounded-full'>
                     <Link to={'/trendleaders/'}>
                         <img className='h-10' src={logoIconUrl} alt='logo' />
                     </Link>
@@ -115,7 +117,9 @@ const NavBar = () => {
                 </Box>
                 <Box className='col-span-1 col-start-12 flex justify-end' gap={2}>
                     <IconButton>
-                        <Person2OutlinedIcon />
+                        <Link to={'/trendleaders/login'}>
+                            <Person2OutlinedIcon />
+                        </Link>
                     </IconButton>
                     <IconButton onClick={colorMode.toggleColorMode}>
                         {theme.palette.mode === 'dark' ? (
