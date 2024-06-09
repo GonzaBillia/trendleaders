@@ -15,13 +15,13 @@ const PricingOptions = () => {
     
 
     return (
-        <Box className='w-full py-32' backgroundColor={colors.primary[400]}>
+        <Box className='w-full py-12 lg:py-32' backgroundColor={colors.primary[400]}>
             <Box className='flex flex-col justify-center items-center pb-24'>
                 <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8'>Pricing Subscriptions</Typography>
                 <Typography variant='h4' color={colors.grey[100]}>Choose the plan that is right for you. We will get in touch after the purchase</Typography>
             </Box>
             <Box className='container mx-auto grid grid-cols-3 gap-3'>
-                <Card style={{ backgroundColor: colors.background[100] }} variant="gradient" className="col-span-1 w-full p-16 my-8 rounded-3xl">
+                <Card style={{ backgroundColor: colors.background[100] }} variant="gradient" className="col-span-3 lg:col-span-1 w-full p-16 my-8 rounded-3xl">
                     <CardHeader
                         floated={false}
                         shadow={false}
@@ -117,7 +117,7 @@ const PricingOptions = () => {
                         </Button>
                     </CardFooter>
                 </Card>
-                <Card style={{ backgroundColor: colors.grey[100] }} variant="gradient" className="col-span-1 w-full pt-20 pb-16 px-16 rounded-3xl">
+                <Card style={{ backgroundColor: colors.grey[100] }} variant="gradient" className="col-span-3 lg:col-span-1 w-full pt-20 pb-16 px-16 rounded-3xl">
                     <CardHeader
                         floated={false}
                         shadow={false}
@@ -219,7 +219,7 @@ const PricingOptions = () => {
                         </Button>
                     </CardFooter>
                 </Card>
-                <Card style={{ backgroundColor: colors.background[100] }} variant="gradient" className="col-span-1 w-full p-16 my-8 rounded-3xl">
+                <Card style={{ backgroundColor: colors.background[100] }} variant="gradient" className="col-span-3 lg:col-span-1 w-full p-16 my-8 rounded-3xl">
                     <CardHeader
                         floated={false}
                         shadow={false}

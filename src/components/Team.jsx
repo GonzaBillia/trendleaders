@@ -24,17 +24,17 @@ const Team = () => {
 
 
     return (
-        <Box className='w-full py-32' backgroundColor={colors.primary[400]}>
-            <Box className='container mx-auto grid grid-cols-2'>
-                <Box className='col-span-1 pr-16'>
+        <Box className='w-full py-12 lg:py-32' backgroundColor={colors.primary[400]}>
+            <Box className='lg:container lg:mx-auto grid grid-cols-2'>
+                <Box className='col-span-2 lg:col-span-1 lg:pr-16 pb-8'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8'>Meet the Leadership</Typography>
                     <Typography variant='h4' color={colors.grey[100]}>We are a team of talented individuals with diverse backgrounds and interests. Our objective is giving our customers the best experience ever. For us is extremely important make a difference in the world and the lives of Your Fans.</Typography>
                 </Box>
-                <Box className='col-span-1'>
+                <Box className='col-span-2 lg:col-span-1'>
                     {teamData.map((member) => (
                         <Box
                             key={member.id}
-                            className='flex justify-start items-center pl-48'
+                            className='flex justify-center lg:justify-start items-center lg:pl-48'
                         >
                             <Box className='pb-16 flex justify-center items-center'>
                                 <Avatar

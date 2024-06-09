@@ -120,7 +120,7 @@ const ProyectsList = ({ section }) => {
                     {proyectsData.map((proyect) => (
                         <Box
                             key={proyect.id}
-                            className='col-span-1 px-2'
+                            className='col-span-3 lg:col-span-1 px-2 my-2'
                             sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%', backgroundColor: colors.background[100] }}
                         >
                             <CardActionArea
@@ -165,7 +165,7 @@ const ProyectsList = ({ section }) => {
 
 
     return (
-        <Box backgroundColor={isSection === false ? colors.primary[400] : colors.background[100]} className='py-32'>
+        <Box backgroundColor={isSection === false ? colors.primary[400] : colors.background[100]} className='py-12 lg:py-32'>
             <Box className='w-full mx-auto container grid grid-cols-3 gap-3'>
                 <Box className='col-span-3 text-center pb-16'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Our Projects</Typography>

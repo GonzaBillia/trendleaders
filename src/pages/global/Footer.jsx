@@ -10,13 +10,13 @@ const Footer = () => {
 
     return (
         <Box width='100%' backgroundColor={colors.primary[400]} borderTop={1} borderColor={colors.primary[100]} className='pt-14 pb-8'>
-            <Box className='container mx-auto grid grid-cols-12'>
-                <Box className='col-span-6 p-5'>
+            <Box className='lg:container lg:mx-auto grid grid-cols-12'>
+                <Box className='col-span-10 col-start-2 lg:col-span-6 lg:col-start-1 p-5'>
                     <Link to={'/trendleaders/'}>
-                        <img className='h-8' src={theme.palette.mode === 'dark' ? 'https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/logoDark2.svg?alt=media&token=6debfbbd-6493-4fac-9f3b-f6032c1c7649' : 'https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/logoLight2.svg?alt=media&token=1314b1fe-bb37-46eb-a35c-87b9f13877da'} alt='logo' />
+                        <img className='lg:h-8 object-contain' src={theme.palette.mode === 'dark' ? 'https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/logoDark2.svg?alt=media&token=6debfbbd-6493-4fac-9f3b-f6032c1c7649' : 'https://firebasestorage.googleapis.com/v0/b/trendleaders-a31a9.appspot.com/o/logoLight2.svg?alt=media&token=1314b1fe-bb37-46eb-a35c-87b9f13877da'} alt='logo' />
                     </Link>
                 </Box>
-                <Box className='col-span-5 col-start-8 flex justify-between items-center p-5'>
+                <Box className='col-span-10 col-start-2 lg:col-span-5 lg:col-start-8 flex justify-between items-center p-5'>
                     <NavLink to={'/trendleaders/services'} className={({ isActive }) => isActive ? 'border-b-4 border-orange-900' : undefined}>
                         <Typography variant='h6'>Services</Typography>
                     </NavLink>
@@ -31,8 +31,8 @@ const Footer = () => {
                     </NavLink>
                 </Box>
                 <Box className='col-span-12 grid grid-cols-3 p-4' borderTop={1} borderColor={colors.primary[100]}>
-                    <Typography variant='h6' className='col-span-1 col-start-1 flex justify-start'>TrendLeaders LLC © 2024</Typography>
-                    <Typography variant='h6' className='col-span-1 col-start-2 flex justify-center'>Made By Gonzalo Billia. Follow my Social Media for more!</Typography>
+                    <Typography variant='h6' className='col-span-2 lg:col-span-1 col-start-1 flex justify-start pb-4 lg:pb-0'>TrendLeaders LLC © 2024</Typography>
+                    <Typography variant='h6' className='col-span-3 row-start-2 lg:row-start-1 lg:col-span-1 lg:col-start-2 flex justify-center text-center'>Made By Gonzalo Billia. Follow my Social Media for more!</Typography>
                     <Box display={"flex"} gap={2} className='col-span-1 col-start-3 flex justify-end'>
                         <Typography as="a" href="https://www.linkedin.com/in/gonzalo-billia/" target='_blank' className="opacity-80 transition-opacity hover:opacity-100">
                             <span className="[&>svg]:h-5 [&>svg]:w-5">
