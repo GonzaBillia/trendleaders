@@ -33,7 +33,7 @@ const BannerHeader = ({section}) => {
                 />
             </div>
             :
-            <Box className='w-full'>
+            <Box className='w-full mt-[88px] lg:mt-0'>
                 <Box>
                     <img src={header.img} alt={header.alt} className='w-full h-full object-cover' />
                 </Box>

@@ -33,7 +33,7 @@ const ContactForm = () => {
         console.log(values)
     }
     return (
-        <Box className='w-full py-32'>
+        <Box className='w-full py-12 xl:py-32'>
             <Box className='container mx-auto'>
                 <Box className='w-full flex flex-col justify-center items-center'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>
@@ -53,7 +53,6 @@ const ContactForm = () => {
                         {({ values, errors, touched, handleBlur, handleChange, handleSubmit }) => (
                             <form onSubmit={handleSubmit}>
                                 <Box
-                                    width="800px"
                                     m="40px 0 0 0"
                                     display="grid"
                                     gap="30px"
@@ -61,6 +60,7 @@ const ContactForm = () => {
                                     sx={{
                                         "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
                                     }}
+                                    className='min-w-[300px] md:min-w-[600px] lg:min-w-[800px]'
                                 >
                                     <TextField
                                         fullWidth

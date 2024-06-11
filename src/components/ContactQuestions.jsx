@@ -14,8 +14,8 @@ const ContactQuestions = () => {
     const colors = tokens(theme.palette.mode)
 
     return (
-        <Box className='w-full py-32' backgroundColor={colors.background[100]}>
-            <Box className='container mx-auto grid grid-cols-2 gap-4'>
+        <Box className='w-full py-12 lg:py-32' backgroundColor={colors.background[100]}>
+            <Box className='container mx-auto grid grid-cols-2 gap-4 px-8'>
                 <Box className='col-span-2 text-center pb-8'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Frequently Asked Questions</Typography>
                     <Typography variant='h4' color={colors.grey[100]}>We're here to help you learn more.</Typography>

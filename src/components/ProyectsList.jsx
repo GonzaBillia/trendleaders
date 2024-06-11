@@ -101,14 +101,14 @@ const ProyectsList = ({ section }) => {
         if (section === true) {
             return (
                 proyectsData.map((proyect) => (
-                    <Box key={proyect.id} backgroundColor={colors.primary[400]} borderColor={colors.orangeAccent[500]} className='grid grid-cols-2 w-full my-16 border-4 rounded-xl'>
-                        <Box backgroundColor={colors.primary[400]} className='col-span-1 flex justify-center items-center px-12 rounded-l-lg'>
-                            <img src={proyect.logo} alt={proyect.alt} className='w-full h-[400px] object-contain' />
+                    <Box key={proyect.id} backgroundColor={colors.primary[400]} borderColor={colors.orangeAccent[500]} className='grid grid-cols-2 w-full my-8 md:my-16 border-4 rounded-xl'>
+                        <Box backgroundColor={colors.primary[400]} className='col-span-2 md:col-span-1 flex justify-center items-center px-6 md:px-12 rounded-t-xl md:rounded-l-lg'>
+                            <img src={proyect.logo} alt={proyect.alt} className='w-full h-[150px] md:h-[400px] object-cover md:object-contain' />
                         </Box>
-                        <Box className='col-span-1 flex justify-center items-center rounded-r-xl'>
-                            <Carousel prevArrow={Hidden} nextArrow={Hidden} navigation={Hidden} autoplay={true} loop={true} className='w-full h-[500px] rounded-r-lg'>
+                        <Box className='col-span-2 md:col-span-1 flex justify-center items-center rounded-b-xl md:rounded-r-xl'>
+                            <Carousel prevArrow={Hidden} nextArrow={Hidden} navigation={Hidden} autoplay={true} loop={true} className='w-full md:h-[500px] rounded-r-lg'>
                                 {proyect.images.map((image) => (
-                                    <img key={[image]} src={image} alt={proyect.alt} className='w-full h-[500px] object-cover' />
+                                    <img key={[image]} src={image} alt={proyect.alt} className='w-full md:h-[500px] object-cover' />
                                 ))}
                             </Carousel>
                         </Box>
@@ -120,7 +120,7 @@ const ProyectsList = ({ section }) => {
                     {proyectsData.map((proyect) => (
                         <Box
                             key={proyect.id}
-                            className='col-span-3 lg:col-span-1 px-2 my-2'
+                            className='col-span-3 lg:col-span-1 px-8 lg:px-2 my-2 lg:my-0'
                             sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%', backgroundColor: colors.background[100] }}
                         >
                             <CardActionArea
@@ -165,9 +165,9 @@ const ProyectsList = ({ section }) => {
 
 
     return (
-        <Box backgroundColor={isSection === false ? colors.primary[400] : colors.background[100]} className='py-12 lg:py-32'>
+        <Box backgroundColor={isSection === false ? colors.primary[400] : colors.background[100]} className='py-12 xl:py-32'>
             <Box className='w-full mx-auto container grid grid-cols-3 gap-3'>
-                <Box className='col-span-3 text-center pb-16'>
+                <Box className='col-span-3 text-center pb-8 lg:pb-16 px-8 lg:px-0'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Our Projects</Typography>
                     <Typography variant='h4' color={colors.grey[100]}>Take a look our Special Proyects made with Love</Typography>
                 </Box>

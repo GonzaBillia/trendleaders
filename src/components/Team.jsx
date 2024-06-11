@@ -24,26 +24,26 @@ const Team = () => {
 
 
     return (
-        <Box className='w-full py-12 lg:py-32' backgroundColor={colors.primary[400]}>
-            <Box className='lg:container lg:mx-auto grid grid-cols-2'>
-                <Box className='col-span-2 lg:col-span-1 lg:pr-16 pb-8'>
+        <Box className='w-full py-12 xl:py-32' backgroundColor={colors.primary[400]}>
+            <Box className='lg:container lg:mx-auto grid grid-cols-2 px-8'>
+                <Box className='col-span-2 md:col-span-1 xl:pr-16 pr-8 pb-16'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8'>Meet the Leadership</Typography>
                     <Typography variant='h4' color={colors.grey[100]}>We are a team of talented individuals with diverse backgrounds and interests. Our objective is giving our customers the best experience ever. For us is extremely important make a difference in the world and the lives of Your Fans.</Typography>
                 </Box>
-                <Box className='col-span-2 lg:col-span-1'>
+                <Box className='col-span-2 md:col-span-1'>
                     {teamData.map((member) => (
                         <Box
                             key={member.id}
-                            className='flex justify-center lg:justify-start items-center lg:pl-48'
+                            className='flex justify-start items-center xl:pl-48 lg:pl-16'
                         >
-                            <Box className='pb-16 flex justify-center items-center'>
+                            <Box className='pb-8 md:pb-16 flex justify-center items-center'>
                                 <Avatar
                                     src={member.profile}
                                     alt={member.name}
                                     sx={{width: 100, height: 100, border: '2px solid', borderColor: colors.primary[100]}}
                                 />
                             </Box>
-                            <Box className='flex flex-col justify-center pb-16 pl-8 gap-1' sx={{height: 100}}>
+                            <Box className='flex flex-col justify-center pb-8 md:pb-16 pl-8 gap-1' sx={{height: 100}}>
                                 <Typography variant='h3' fontWeight={700} color={colors.grey[100]}>{member.name}</Typography>
                                 <Typography variant='h5' fontWeight={500} color={colors.blueAccent[400]}>{member.title}</Typography>
                             </Box>

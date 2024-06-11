@@ -27,8 +27,8 @@ const PlanCards = () => {
     }, [])
 
     return (
-        <Box className='w-full lg:mx-auto lg:container my-12 lg:my-32 grid grid-cols-3 gap-4'>
-            <Box className='col-span-3 text-center pb-16'>
+        <Box className='w-full lg:mx-auto lg:container py-12 xl:py-32 grid grid-cols-3 gap-4'>
+            <Box className='col-span-3 text-center pb-8 lg:pb-16'>
                 <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Our Leads Plan</Typography>
                 <Typography variant='h4' color={colors.grey[100]}>These are the three steps of Success!</Typography>
             </Box>
@@ -36,7 +36,7 @@ const PlanCards = () => {
                 <Card
                     key={plan.id}
                     shadow={false}
-                    className='col-span-3 lg:col-span-1 rounded-3xl p-10 m-8'
+                    className='col-span-3 lg:col-span-1 rounded-3xl p-10 m-8 lg:m-0'
                     style={{backgroundColor: colors.background[100], borderWidth: 2, borderColor: colors.primary[400]}}
                 >
                     <CardBody style={{backgroundColor: colors.background[100], minHeight: 370}} className='text-center rounded-xl'>

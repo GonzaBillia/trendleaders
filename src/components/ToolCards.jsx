@@ -46,19 +46,19 @@ const ToolCards = () => {
     return (
         <Box backgroundColor={colors.primary[400]} className='w-full'>
 
-            <Box className="py-32 container mx-auto">
+            <Box className="py-12 xl:py-32 container mx-auto">
                 <Box className='flex flex-col items-center justify-center pb-16'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>The Three Master Tools</Typography>
                     <Typography variant='h4' color={colors.grey[100]}> These are the three tools you will have to get started.</Typography>
                 </Box>
                 <Box>
                     <Box className='grid grid-cols-3 my-2 '>
-                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
-                            <Box className='flex justify-center pt-8'>
+                        <Box className='col-span-2 p-4 lg:p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
+                            <Box className='flex justify-center lg:pt-8'>
                                 <Typography variant='h2' fontWeight={500} color={colors.grey[100]}>Product Designing</Typography>
                             </Box>
                             <Box>
-                                <Typography variant='h4' color={colors.grey[200]} className='py-8 px-16'>
+                                <Typography variant='h4' color={colors.grey[200]} className='py-4 px-4 lg:py-8 lg:px-16'>
                                     That is How you be able to create your Merch. We will provide You a Merch Design Professional to help you make the Merch of your Dreams! You need to provide us basic information about your interests, your target audience, your brand identity information, etc.
                                 </Typography>
                             </Box>
@@ -80,12 +80,12 @@ const ToolCards = () => {
                         <Box className='col-span-1 h-[400px]'>
                             <img src={shopifyBg} alt="Shopify" className='h-full w-full object-cover' />
                         </Box>
-                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
-                            <Box className='flex justify-center pt-8'>
+                        <Box className='col-span-2 p-4 lg:p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
+                            <Box className='flex justify-center lg:pt-8'>
                                 <Typography variant='h2' fontWeight={500} color={colors.grey[100]}>Store Providing</Typography>
                             </Box>
                             <Box>
-                                <Typography variant='h4' color={colors.grey[200]} className='py-8 px-16'>
+                                <Typography variant='h4' color={colors.grey[200]} className='py-4 px-4 lg:py-8 lg:px-16'>
                                     We Work with a practical and fast Store provider. Through it you can provide your Merch with your fans and followers. We will do the rest of the work for you.
                                 </Typography>
                             </Box>
@@ -101,12 +101,12 @@ const ToolCards = () => {
                         </Box>
                     </Box>
                     <Box className='grid grid-cols-3 my-2 '>
-                        <Box className='col-span-2 p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
-                            <Box className='flex justify-center pt-8'>
+                        <Box className='col-span-2 p-4 lg:p-8 flex flex-col justify-around h-[400px]' backgroundColor={colors.background[100]}>
+                            <Box className='flex justify-center lg:pt-8'>
                                 <Typography variant='h2' fontWeight={500} color={colors.grey[100]}>Sales Controlling</Typography>
                             </Box>
                             <Box>
-                                <Typography variant='h4' color={colors.grey[200]} className='py-8 px-16'>
+                                <Typography variant='h4' color={colors.grey[200]} className='py-4 px-4 lg:py-8 lg:px-16'>
                                     This is how you control the sales of your Store. A simply way your new clients will be able to buy your products. it is available to use anywhere. it supports most of the payment methods, like Visa, Mastercard and American Express.
                                 </Typography>
                             </Box>

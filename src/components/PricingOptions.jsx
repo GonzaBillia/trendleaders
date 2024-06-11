@@ -16,12 +16,12 @@ const PricingOptions = () => {
 
     return (
         <Box className='w-full py-12 lg:py-32' backgroundColor={colors.primary[400]}>
-            <Box className='flex flex-col justify-center items-center pb-24'>
-                <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8'>Pricing Subscriptions</Typography>
-                <Typography variant='h4' color={colors.grey[100]}>Choose the plan that is right for you. We will get in touch after the purchase</Typography>
+            <Box className='flex flex-col justify-center items-center pb-8 lg:pb-24 px-8'>
+                <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-8 text-center'>Pricing Subscriptions</Typography>
+                <Typography variant='h4' color={colors.grey[100]} className='text-center'>Choose the plan that is right for you. We will get in touch after the purchase</Typography>
             </Box>
-            <Box className='container mx-auto grid grid-cols-3 gap-3'>
-                <Card style={{ backgroundColor: colors.background[100] }} variant="gradient" className="col-span-3 lg:col-span-1 w-full p-16 my-8 rounded-3xl">
+            <Box className='container mx-auto grid grid-cols-3 gap-3 px-8 md:px-4'>
+                <Card style={{ backgroundColor: colors.background[100] }} variant="gradient" className="col-span-3 md:col-span-1 w-full p-4 xl:p-16 my-4 lg:my-8 rounded-3xl">
                     <CardHeader
                         floated={false}
                         shadow={false}
@@ -117,7 +117,7 @@ const PricingOptions = () => {
                         </Button>
                     </CardFooter>
                 </Card>
-                <Card style={{ backgroundColor: colors.grey[100] }} variant="gradient" className="col-span-3 lg:col-span-1 w-full pt-20 pb-16 px-16 rounded-3xl">
+                <Card style={{ backgroundColor: colors.grey[100] }} variant="gradient" className="col-span-3 md:col-span-1 w-full pt-8 px-4 pb-4 xl:pt-20 xl:pb-16 xl:px-16 rounded-3xl">
                     <CardHeader
                         floated={false}
                         shadow={false}
@@ -195,9 +195,9 @@ const PricingOptions = () => {
                             </li>
                         </ul>
                     </CardBody>
-                    <CardFooter className="mt-8 p-0 flex flex-col justify-center items-start"
+                    <CardFooter className="mt-8 pt-4 lg:p-0 flex flex-col justify-center items-start"
                         style={{ borderTop: '1px solid', borderColor: colors.grey[800] }}>
-                        <Box className='flex justify-start items-center py-6 px-2'>
+                        <Box className='hidden lg:flex justify-start items-center py-6 px-2'>
                             <StarIcon fontSize='large' sx={{color: '#fbc02d'}} className='mx-3'/>
                             <Typography variant="h4" fontWeight={700} color={colors.grey[900]} className="">{" "}Favorite Leads Plan!</Typography>
                         </Box>
@@ -219,7 +219,7 @@ const PricingOptions = () => {
                         </Button>
                     </CardFooter>
                 </Card>
-                <Card style={{ backgroundColor: colors.background[100] }} variant="gradient" className="col-span-3 lg:col-span-1 w-full p-16 my-8 rounded-3xl">
+                <Card style={{ backgroundColor: colors.background[100] }} variant="gradient" className="col-span-3 md:col-span-1 w-full p-4 xl:p-16 my-4 lg:my-8 rounded-3xl">
                     <CardHeader
                         floated={false}
                         shadow={false}

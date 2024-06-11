@@ -79,14 +79,14 @@ const ServicesStarted = () => {
     }));
 
     return (
-    <Box backgroundColor={colors.primary[400]} className='w-full py-32'>
+    <Box backgroundColor={colors.primary[400]} className='w-full py-12 xl:py-32'>
         <Box className='container mx-auto'>
-            <Box className='flex flex-col justify-center items-center pb-16'>
-                <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Take Advantage of Your Impact</Typography>
-                <Typography variant='h4' color={colors.grey[100]} className='pb-4'>This is the Most Important part of the plan and... It depends on You</Typography>
+            <Box className='flex flex-col justify-center items-center pb-8 lg:pb-16'>
+                <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4 text-center'>Take Advantage of Your Impact</Typography>
+                <Typography variant='h4' color={colors.grey[100]} className='pb-4 text-center'>This is the Most Important part of the plan and... It depends on You</Typography>
             </Box>
-            <Box className='grid grid-cols-6 gap-8 px-20'>
-                <Box className='col-span-4 py-16 pr-16'>
+            <Box className='grid grid-cols-6 lg:gap-4 px-8 lg:px-20 justify-center items-center'>
+                <Box className='col-span-6 lg:col-span-4 lg:py-16 lg:pr-16'>
                     <Box className='w-full h-full flex flex-col justify-center items-start'>
                         <Typography variant='h2' fontWeight={700} color={colors.orangeAccent[500]} className='pb-16'>Keep Doing What You Do Best!</Typography>
                         <Typography variant='h4' color={colors.grey[200]} className='pb-8'>
@@ -95,14 +95,14 @@ const ServicesStarted = () => {
                         <Typography variant='h4' color={colors.grey[200]} className='pb-16'>
                             Take care of sharing this with the World, your online Store, your unique Designs, your Merch and.. leave the rest in our Hands.
                         </Typography>
-                        <Typography variant='h3' fontWeight={500} color={colors.blueAccent[400]} className='pb-4'>
+                        <Typography variant='h3' fontWeight={500} color={colors.blueAccent[400]} className='pb-8'>
                             The more reach you have, the higher we can go.
                         </Typography>
                     </Box>
                 </Box>
                 <Box
-                        className='col-span-2 w-full h-full'
-                        sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%', backgroundColor: colors.background[100] }}
+                        className='flex justify-center col-span-6 lg:col-span-2 lg:w-full h-full max-w-[400px] min-h-[500px]'
+                        sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, backgroundColor: colors.background[100] }}
                     >
                         <CardActionArea
                             component={Link}
@@ -112,6 +112,7 @@ const ServicesStarted = () => {
                                 focusRipple
                                 style={{
                                     width: '100%',
+                                    height: '100%',
                                 }}
                             >
                                 <ImageSrc style={{ backgroundImage: `url(${startImg})` }} />

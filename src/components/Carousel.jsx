@@ -39,7 +39,7 @@ const CarouselComponent = () => {
             :
 
             <Carousel
-            className="rounded-b-xl mt-[88px]"
+            className="rounded-b-xl mt-[88px] lg:mt-0"
             loop={true}
             autoplay={true}
             prevArrow={Hidden} 
@@ -62,7 +62,7 @@ const CarouselComponent = () => {
                     key={banner.id}
                     src={banner.img}
                     alt={banner.alt}
-                    className="w-full rounded-b-xl object-cover lg:h-[750px]"
+                    className="w-full rounded-b-xl object-cover lg:max-h-[750px]"
                 />
             ))}
         </Carousel>

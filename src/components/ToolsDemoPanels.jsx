@@ -81,7 +81,7 @@ const ToolsDemoPanels = () => {
             return (
                 printfulBrands.map((brand) => (
                     <Box key={brand.id} className='w-full h-full bg-white'>
-                        <img src={brand.img} alt={brand.alt} className='p-16 w-full h-full object-contain rounded-xl' />
+                        <img src={brand.img} alt={brand.alt} className='p-2 lg:p-16 w-full h-full object-contain rounded-xl' />
                     </Box>
 
                 ))
@@ -90,7 +90,7 @@ const ToolsDemoPanels = () => {
             return (
                 shopifyAnalytics.map((brand) => (
                     <Box key={brand.id} className='w-full h-full bg-white'>
-                        <img src={brand.img} alt={brand.alt} className='w-full pt-16  h-full object-cover rounded-xl' />
+                        <img src={brand.img} alt={brand.alt} className='w-full lg:pt-16 pt-8 h-full object-cover rounded-xl' />
                     </Box>
 
                 ))
@@ -99,7 +99,7 @@ const ToolsDemoPanels = () => {
             return (
                 stripeCards.map((brand) => (
                     <Box key={brand.id} className='w-full h-full bg-white'>
-                        <img src={brand.img} alt={brand.alt} className='w-full p-20 h-full object-contain rounded-xl' />
+                        <img src={brand.img} alt={brand.alt} className='w-full p-2 lg:p-20 h-full object-contain rounded-xl' />
                     </Box>
 
                 ))
@@ -166,9 +166,9 @@ const ToolsDemoPanels = () => {
 
 
     return (
-        <Box className='w-full py-32' backgroundColor={colors.background[100]}>
+        <Box className='w-full py-12 xl:py-32' backgroundColor={colors.background[100]}>
             <Box className='container mx-auto'>
-                <Box className='flex flex-col justify-center items-center pb-16'>
+                <Box className='flex flex-col justify-center items-center pb-8 lg:pb-16'>
                     <Typography variant='h1' fontWeight={700} color={colors.grey[100]} className='pb-4'>Tools Advantages</Typography>
                     <Typography variant='h4' color={colors.grey[100]}>See some advantages of using our tools</Typography>
                 </Box>
@@ -198,47 +198,47 @@ const ToolsDemoPanels = () => {
                             </Tab>
                         ))}
                     </TabsHeader>
-                    <TabsBody className='h-[1000px]' style={{ backgroundColor: colors.background[100] }}>
+                    <TabsBody className='md:h-[1000px] h-[2000px]' style={{ backgroundColor: colors.background[100] }}>
                         {data.map(({ value, titleT1, titleT2, descT2, titleT3, mainBrand, mainBrandLight, map, titleT4, cover }) => (
-                            <TabPanel key={value} value={value} className='grid grid-cols-12 p-4 grid-rows-12 gap-4 w-full h-full'>
+                            <TabPanel key={value} value={value} className='grid grid-cols-12 p-4 grid-rows-12 gap-2 md:gap-4 w-full h-full'>
                                 {/* ROW 1 */}
-                                <Box backgroundColor={colors.primary[400]} className='col-start-1 col-span-6 row-start-1 row-span-4 rounded-xl'>
+                                <Box backgroundColor={colors.primary[400]} className='col-start-1 col-span-12 md:col-span-6 row-start-1 row-span-2 md:row-span-4 rounded-xl'>
                                     <Box className='w-full h-full relative'>
                                         <img src={cover} alt="printful" className='w-full h-full object-cover rounded-xl' />
-                                        <Box className='p-12 absolute inset-0 flex flex-col h-full w-full items-center justify-center bg-black/65 rounded-xl'>
-                                            <Typography variant='h1' fontWeight={700} color='white' className='pb-8 text-center'>{titleT1}</Typography>
+                                        <Box className='p-4 lg:p-12 absolute inset-0 flex flex-col h-full w-full items-center justify-center bg-black/65 rounded-xl'>
+                                            <Typography variant='h1' fontWeight={700} color='white' className='text-center'>{titleT1}</Typography>
                                         </Box>
                                     </Box>
 
                                 </Box>
-                                <Box backgroundColor={colors.primary[400]} borderColor={colors.orangeAccent[500]} className='col-start-7 col-span-6 row-start-1 row-span-4 rounded-xl border-2'>
-                                    <Box className='p-6 relative w-full h-full'>
+                                <Box backgroundColor={colors.primary[400]} borderColor={colors.orangeAccent[500]} className='col-span-12 md:col-start-7 md:col-span-6 md:row-start-1 md:row-span-4 row-start-3 row-span-2 rounded-xl border-2'>
+                                    <Box className='p-2 lg:p-6 relative w-full h-full'>
                                         <Box className='absolute top-0 right-0 w-16 h-16 flex justify-center items-center rounded-bl-xl rounded-tr-lg' backgroundColor={colors.orangeAccent[500]} >
                                             <QuestionMarkIcon fontSize='large' className=' text-white' />
                                         </Box>
-                                        <Box className='p-8 flex flex-col h-full w-full items-start justify-around rounded-xl'>
-                                            <Typography variant='h2' fontWeight={500} color={colors.grey[100]} className='pb-8'>{titleT2}</Typography>
+                                        <Box className='mlg:p-8 flex flex-col h-full w-full items-start justify-center md:justify-around rounded-xl'>
+                                            <Typography variant='h2' fontWeight={500} color={colors.grey[100]} className='pb-4 lg:pb-8'>{titleT2}</Typography>
                                             <Typography variant='h4' color={colors.grey[100]} className=''>{descT2}</Typography>
                                         </Box>
                                     </Box>
                                 </Box>
 
                                 {/* ROW 2 */}
-                                <Box backgroundColor={colors.primary[400]} className='col-start-1 col-span-4 row-start-5 row-span-4 rounded-xl'>
+                                <Box backgroundColor={colors.primary[400]} className='col-start-1 col-span-12 md:col-span-6 lg:col-span-4 row-start-5 row-span-2 md:row-span-5 lg:row-span-4 rounded-xl'>
                                     <Box borderColor={colors.orangeAccent[500]} className='relative w-full h-full border-2 rounded-xl'>
-                                        <Box backgroundColor={colors.orangeAccent[500]} className='absolute z-10 top-0 w-full h-16 flex justify-center items-center rounded-t-lg'>
-                                            <Typography variant='h3' fontWeight={500} color='white' className=''>{titleT3}</Typography>
+                                        <Box backgroundColor={colors.orangeAccent[500]} className='absolute z-10 top-0 w-full h-12 md:h-16 flex justify-center items-center rounded-t-lg'>
+                                            <Typography variant='h3' fontWeight={500} color='white' className='text-center'>{titleT3}</Typography>
                                         </Box>
                                         <Carousel navigation={Hidden} prevArrow={Hidden} nextArrow={Hidden} className='rounded-xl' loop={true} autoplay={true}>
                                             {handleBrandsChange(value)}
                                         </Carousel>
                                     </Box>
                                 </Box>
-                                <Box backgroundColor={colors.background[100]} borderColor={colors.primary[400]} className='col-start-5 col-span-4 row-start-5 row-span-4 rounded-xl flex justify-center items-center'>
+                                <Box backgroundColor={colors.background[100]} borderColor={colors.primary[400]} className='hidden lg:col-start-5 col-span-4  lg:row-span-4 rounded-xl lg:flex justify-center items-center'>
                                     {theme.palette.mode === "dark" ? <img src={mainBrand} alt='img' /> : <img src={mainBrandLight} alt='img' />}
 
                                 </Box>
-                                <Box backgroundColor={colors.primary[400]} className='col-start-9 col-span-4 row-start-5 row-span-8 rounded-xl'>
+                                <Box backgroundColor={colors.primary[400]} className='col-start-1 col-span-12 row-start-7 row-span-3 md:col-start-7 md:col-span-6 lg:col-start-9 lg:col-span-4 md:row-start-5 md:row-span-5 lg:row-span-8 rounded-xl'>
                                     <Box className='w-full h-full'>
                                         <Carousel navigation={Hidden} prevArrow={Hidden} nextArrow={Hidden} className='w-full h-full rounded-xl' loop={true} autoplayDelay={4000} autoplay={true}>
                                             {handleCarouselChange(value)}
@@ -247,17 +247,17 @@ const ToolsDemoPanels = () => {
                                 </Box>
 
                                 {/* ROW 2 */}
-                                <Box backgroundColor={colors.primary[400]} className='col-start-1 col-span-8 row-start-9 row-span-4 rounded-xl'>
+                                <Box backgroundColor={colors.primary[400]} className='col-start-1 col-span-12 row-start-10 row-span-3 lg:col-span-8 lg:row-start-9 lg:row-span-4 rounded-xl'>
                                     <Box borderColor={colors.orangeAccent[500]} className='relative w-full h-full border-2 rounded-xl'>
                                         <Box className='absolute top-0 right-0 w-16 h-16 flex justify-center items-center rounded-bl-xl rounded-tr-lg' backgroundColor={colors.orangeAccent[500]} >
                                             <PublicIcon fontSize='large' className=' text-white' />
                                         </Box>
-                                        <Box borderColor={colors.orangeAccent[500]} className='flex h-full w-full'>
-                                            <Box className='w-1/3 h-full flex justify-start items-center p-8'>
+                                        <Box borderColor={colors.orangeAccent[500]} className='md:flex grid grid-rows-2 h-full w-full'>
+                                            <Box className='w-full row-start-2 md:w-1/2 lg:w-1/3 md:h-full flex justify-start items-center p-2 md:p-8'>
                                                 <Typography variant='h1' fontWeight={500} color={colors.grey[100]} className=''>{titleT4}</Typography>
                                             </Box>
-                                            <Box className='w-2/3 h-full bg-white rounded-r-xl'>
-                                                <img src={map} className='object-cover w-full h-full p-8 ' />
+                                            <Box className='w-full row-start-1 md:w-1/2 lg:w-2/3 md:h-full md:bg-white md:rounded-r-xl'>
+                                                <img src={map} className='object-cover w-full h-full md:p-8 rounded-t-xl ' />
                                             </Box>
                                         </Box>
                                     </Box>
